@@ -282,7 +282,7 @@ public class S3AFileSystem extends FileSystem {
 
     TransferManagerConfiguration transferConfiguration = new TransferManagerConfiguration();
     transferConfiguration.setMinimumUploadPartSize(partSize);
-    transferConfiguration.setMultipartUploadThreshold(multiPartThreshold);
+    transferConfiguration.setMultipartUploadThreshold(new Long(multiPartThreshold));
 
     transfers = new TransferManager(s3, threadPoolExecutor);
     transfers.setConfiguration(transferConfiguration);
